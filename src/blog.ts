@@ -14,7 +14,7 @@ const blogs: Blog[] = [
     description: "GO STREAM AESPA WHIPLASH ",
     image: "./img/aespa-whiplash.jpg",
     imageAlt: "WHIPLASH <3",
-    slug: "stream-Whiplash",
+    slug: "stream-whiplash",
   },
   {
     title: "STREAM APT BY ROSE and BRUNO MARS",
@@ -44,7 +44,7 @@ function addBlogs(blogs: Blog[]) {
 
     const blogLink = document.createElement("a");
     // link to blog page with a slug
-    blogLink.href = '/blogs/${blog.slug}';
+    blogLink.href = `/blogs/${blog.slug}.html`;
     blogLink.textContent = "Read More!";
     blogLink.classList.add("blog-link");
 

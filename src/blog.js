@@ -30,7 +30,7 @@ function addBlogs(blogs) {
     blogDesc.textContent = blog.description;
     var blogLink = document.createElement("a");
     // link to blog page with a slug
-    blogLink.href = "/blogs/${blog.slug}";
+    blogLink.href = `/blogs/${blog.slug}.html`;
     blogLink.textContent = "Read More!";
     blogLink.classList.add("blog-link");
     blogDiv.appendChild(blogTitle);
