@@ -44,7 +44,7 @@ function addBlogs(blogs: Blog[]) {
 
     const blogLink = document.createElement("a");
     // link to blog page with a slug
-    blogLink.href = "/blogs/${blog.slug}";
+    blogLink.href = '/blogs/${blog.slug}';
     blogLink.textContent = "Read More!";
     blogLink.classList.add("blog-link");
 
