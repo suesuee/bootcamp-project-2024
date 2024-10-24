@@ -5,7 +5,7 @@ var blogs = [
     description: "GO STREAM AESPA WHIPLASH ",
     image: "./img/aespa_whiplash.jpg",
     imageAlt: "WHIPLASH <3",
-    slug: "stream-Whiplash",
+    slug: "stream-whiplash",
   },
   {
     title: "STREAM APT BY ROSE and BRUNO MARS",
