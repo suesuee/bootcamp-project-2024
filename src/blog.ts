@@ -12,9 +12,9 @@ const blogs: Blog[] = [
     title: "STREAM AESPA WHIPLASH",
     date: "10/23/2024",
     description: "GO STREAM AESPA WHIPLASH ",
-    image: "./img/pa-whiplash.jpg",
+    image: "./img/aespa-whiplash.jpg",
     imageAlt: "WHIPLASH <3",
-    slug: "Stream-Whiplash",
+    slug: "stream-Whiplash",
   },
   {
     title: "STREAM APT BY ROSE and BRUNO MARS",
@@ -22,7 +22,7 @@ const blogs: Blog[] = [
     description: "GO STREAM APT BY ROSE and BRUNO MARS",
     image: "./img/APT.jpeg",
     imageAlt: "APT <3",
-    slug: "Stream-APT",
+    slug: "stream-APT",
   },
 ];
 

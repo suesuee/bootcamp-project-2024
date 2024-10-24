@@ -5,7 +5,7 @@ var blogs = [
     description: "GO STREAM AESPA WHIPLASH ",
     image: "./img/aespa_whiplash.jpg",
     imageAlt: "WHIPLASH <3",
-    slug: "Stream-Whiplash",
+    slug: "stream-Whiplash",
   },
   {
     title: "STREAM APT BY ROSE and BRUNO MARS",
@@ -13,7 +13,7 @@ var blogs = [
     description: "GO STREAM APT BY ROSE and BRUNO MARS",
     image: "./img/APT.jpeg",
     imageAlt: "APT <3",
-    slug: "Stream-APT",
+    slug: "stream-APT",
   },
 ];
 function addBlogs(blogs) {
