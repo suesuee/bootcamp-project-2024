@@ -214,6 +214,7 @@ main {
 
   border-radius: 2px;
 }
+
 /* PDF resume display styling */
 .resume-display {
   width: 90%;
@@ -308,14 +309,14 @@ form {
   transform: scale(1.02);
 }
 
-/* Styling for the blog title */
+/* CSS for the blog title */
 .blog-post h1 {
   font-size: 20px;
   color: var(--cg-black);
   margin-bottom: 12px;
 }
 
-/* Styling for the blog image */
+/* CSS for the blog image */
 .blog-post img {
   max-width: 100%;
   height: auto;
@@ -324,14 +325,14 @@ form {
   display: block;
 }
 
-/* Styling for the blog description */
+/* CSS for the blog description */
 .blog-post p {
   font-size: 15px;
   color: var(--cg-black);
   line-height: 1.6;
 }
 
-/* Styling for the "Read more" link */
+/* CSS for the "Read more" link */
 .blog-link {
   color: var(--cg-blue);
   font-weight: bold;
