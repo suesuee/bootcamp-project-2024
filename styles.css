@@ -320,7 +320,8 @@ form {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
-  margin-bottom: 12px;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Styling for the blog description */
