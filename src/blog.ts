@@ -25,3 +25,5 @@ const blogs: Blog[] = [
         slug: "Stream-APT",
     },
 ];
+
+const blogContainer = document.getElementById('blog-container');
