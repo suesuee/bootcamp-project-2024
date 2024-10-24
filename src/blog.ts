@@ -11,7 +11,7 @@ const blogs: Blog[] = [
   {
     title: "STREAM AESPA WHIPLASH",
     date: "10/23/2024",
-    description: "GO STREA AESPA WHIPLASH ",
+    description: "GO STREAM AESPA WHIPLASH ",
     image: "./img/pa-whiplash.jpg",
     imageAlt: "WHIPLASH <3",
     slug: "Stream-Whiplash",
