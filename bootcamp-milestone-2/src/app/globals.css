@@ -4,14 +4,14 @@ html, body {
     margin: 0;
   }
   
-  /* Use a flex layout to ensure footer sticks to the bottom */
+  /* flex layout to ensure footer sticks to the bottom */
   #__next {
     display: flex;
     flex-direction: column;
     min-height: 100%;
   }
   
-  /* The main content should grow to fill available space */
+  /* The main content to grow to fill the available space */
   main {
     flex-grow: 1;
   }

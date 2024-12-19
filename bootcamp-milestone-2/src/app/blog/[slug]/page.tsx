@@ -1,10 +1,10 @@
-import blogs from "@/static/blogData"; // Import blog data
-import { notFound } from "next/navigation"; // Handle invalid slugs
+import blogs from "@/static/blogData"; 
+import { notFound } from "next/navigation"; 
 import Image from "next/image";
-import styles from "./page.module.css"; // CSS module for the blog page
+import styles from "./page.module.css"; 
 
 export default function BlogPage({ params }: { params: { slug: string } }) {
-  console.log("Received params:", params); // Debug log
+  console.log("Received params:", params); // to debug log , not working : / 
   const blog = blogs.find((b) => b.slug === params.slug);
 
   if (!blog) {

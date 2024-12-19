@@ -2,7 +2,7 @@ import React from "react";
 import blogs from "@/static/blogData";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./page.module.css"; // Add styles for your blog list page
+import styles from "./page.module.css";
 
 export default function BlogListPage() {
   return (
