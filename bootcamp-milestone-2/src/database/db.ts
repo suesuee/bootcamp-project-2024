@@ -9,11 +9,15 @@ let connection: typeof mongoose;
  * @returns {Promise<typeof mongoose>}
  */
 const connectDB = async () => {
-  if (!connection) {
-    connection = await mongoose.connect(url);
-    console.log("Database connected successfully");
+  try {
+    if (!connection) {
+      connection = await mongoose.connect(url);
+      console.log("Successfully connected to MongoDB.");
+      return connection;
+    }
+  } catch (error) {
+    console.log(error);
   }
-  return connection;
 };
 
 export default connectDB;

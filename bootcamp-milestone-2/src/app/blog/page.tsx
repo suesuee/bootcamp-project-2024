@@ -1,9 +1,8 @@
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 import styles from "./page.module.css";
 import connectDB from "@/database/db";
 import Blog from "@/database/blogSchema";
+import BlogPreview from "@/components/blogPreview"; // Adjust the import path as needed
 
 // Function to fetch blogs from MongoDB
 async function getBlogs() {
@@ -31,31 +30,21 @@ export default async function BlogListPage() {
     );
   }
 
-  // Render the blog list
+  // Render the blog list using BlogPreview
   return (
     <main className={styles.container}>
       <h1 className={styles.title}>Blog Posts</h1>
       <div className={styles.blogList}>
         {blogs.map((blog: any) => (
-          <div key={blog.slug} className={styles.blogPreview}>
-            {/* Link to the dynamic slug */}
-            <Link href={`/blog/${blog.slug}`}>
-              <h2 className={styles.blogTitle}>{blog.title}</h2>
-            </Link>
-            <p className={styles.blogDate}><strong>Date:</strong> {new Date(blog.date).toLocaleDateString()}</p>
-            <Image
-              src={blog.image}
-              alt={blog.imageAlt}
-              width={500}
-              height={300}
-              className={styles.blogImage}
-            />
-            <p className={styles.blogDescription}>{blog.description}</p>
-            {/* Read more link */}
-            <Link href={`/blog/${blog.slug}`} className={styles.readMore}>
-              Read More
-            </Link>
-          </div>
+          <BlogPreview
+            key={blog.slug}
+            title={blog.title}
+            date={new Date(blog.date).toLocaleDateString()}
+            description={blog.description}
+            image={blog.image}
+            imageAlt={blog.imageAlt}
+            slug={blog.slug}
+          />
         ))}
       </div>
     </main>

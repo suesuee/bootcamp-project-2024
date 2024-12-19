@@ -1,29 +1,30 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Document, Model } from "mongoose";
 
-// typescript type (can also be an interface)
-type Blog = {
+// TypeScript type for Blog
+export type Blog = {
   title: string;
   slug: string;
   date: Date;
-  description: string; // for preview
-  //content: string; // text content for individual blog page
-  image: string; // url for string in public
-  image_alt: string; // alt for image
-  // comments: IComment[]; // array for comments
+  description: string; // For preview
+  image: string; // URL for image in `public`
+  imageAlt: string; // Alt text for the image
 };
 
-// mongoose schema
-const blogSchema = new Schema<Blog>({
+// Mongoose Document type (extends Blog to include Mongoose's fields like `_id`)
+export interface BlogDocument extends Blog, Document {}
+
+// Mongoose schema
+const blogSchema = new Schema<BlogDocument>({
   title: { type: String, required: true },
   slug: { type: String, required: true },
   date: { type: Date, required: false, default: new Date() },
   description: { type: String, required: true },
   image: { type: String, required: true },
-  image_alt: { type: String, required: true },
-  //content: { type: String, required: true },
+  imageAlt: { type: String, required: true },
 });
 
-// defining the collection and model
-const Blog = mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
+// Define the collection and model
+const Blog: Model<BlogDocument> =
+  mongoose.models["blogs"] || mongoose.model<BlogDocument>("blogs", blogSchema);
 
 export default Blog;
