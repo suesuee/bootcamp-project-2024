@@ -10,10 +10,10 @@ export default function HomePage() {
       <h1 className={styles.title}>Welcome ~</h1>
       <div className={styles.profileSection}>
         <Image
-          src="/img/profile.jpg" // Path to your profile image
+          src="/img/profile.jpg" 
           alt="Profile picture"
-          width={150} // Adjust width as needed
-          height={150} // Adjust height as needed
+          width={150} 
+          height={150} 
           className={styles.profileImage}
         />
         <p className={styles.description}>

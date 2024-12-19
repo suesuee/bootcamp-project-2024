@@ -10,23 +10,23 @@
 .title {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #333; /* Adjust for your theme */
+  color: #333;
 }
 
 .profileSection {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #f9f9f9; /* Light background for contrast */
+  background-color: #f9f9f9; 
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   max-width: 800px;
   width: 100%;
 }
 
 .profileImage {
-  border-radius: 50%; /* Makes the image circular */
+  border-radius: 50%; /* Circular image */
   margin-right: 20px; /* Space between image and text */
 }
 

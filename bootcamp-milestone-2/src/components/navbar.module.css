@@ -1,27 +1,27 @@
 /* Navbar container */
 .navbar {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: space-between; /* Space between logo and nav links */
-  align-items: center; /* Center items vertically */
-  background-color: #aec6cf; /* Background color */
-  padding: 10px 20px; /* Padding around the navbar */
-  height: 60px; /* Optional: Set navbar height */
-  color: white; /* Default text color */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: #aec6cf; 
+  padding: 10px 20px;
+  height: 40px;
+  color: white; 
 }
 
 /* Logo styling */
 .logo a {
-  font-size: 1.5rem; /* Larger font for the logo */
+  font-size: 1.5rem; 
   font-weight: bold;
   text-decoration: none;
-  color: white; /* Text color */
+  color: white;
   font-family: Georgia, serif;
 }
 
 /* Navigation links */
 .navList {
-  display: flex; /* Align links in a row */
-  gap: 20px; /* Space between links */
+  display: flex; 
+  gap: 20px; 
 }
 
 .navList a {
@@ -33,6 +33,6 @@
 }
 
 .navList a:hover {
-  color: #0070f3; /* Hover effect */
+  color: #0070f3; 
   text-decoration: underline;
 }
