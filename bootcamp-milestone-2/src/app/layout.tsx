@@ -34,8 +34,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <main>{children}</main> {/* Wrap children in a <main> tag for semantic HTML */}
-        <Footer /> {/* Add Footer here */}
+        <main>{children}</main> 
+        <Footer />
       </body>
     </html>
   );
