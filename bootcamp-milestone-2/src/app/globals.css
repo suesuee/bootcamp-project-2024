@@ -1,12 +1,18 @@
-/* Reset margins and padding */
-* {
+/* Ensure the body and html fill the viewport */
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
   }
   
-  body, html {
-    margin: 0;
-    padding: 0;
+  /* Use a flex layout to ensure footer sticks to the bottom */
+  #__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  /* The main content should grow to fill available space */
+  main {
+    flex-grow: 1;
   }
   

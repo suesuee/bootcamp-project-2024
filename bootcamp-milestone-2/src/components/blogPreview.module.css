@@ -1,0 +1,23 @@
+.blogPreview {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .imageContainer {
+    margin-bottom: 16px;
+  }
+  
+  .blogPreview h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .blogPreview p {
+    margin: 8px 0;
+    color: #666;
+  }
+  
