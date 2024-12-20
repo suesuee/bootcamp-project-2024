@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import connectDB from "@/database/db";
-import Blog from "@/database/blogSchema"; // Import Blog model
+import Blog from "@/database/blogSchema";
 import BlogDetail from "@/components/blogDetail";
 
 // Fetch a single blog by slug
@@ -17,11 +17,12 @@ async function getSingleBlog(slug: string) {
 }
 
 // Dynamic blog page
-export default async function BlogPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function BlogPage(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const blog = await getSingleBlog(params.slug); // Fetch the blog using slug
 
   if (!blog) {

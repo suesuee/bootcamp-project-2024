@@ -1,0 +1,47 @@
+.project {
+    width: 80%; /* Box width */
+    max-width: 400px;
+    background-color: #aec6cf;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+    text-align: center;
+  }
+  
+  .projectImage {
+    width: 100%; /* Full width of the box */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Fit within the box without distortion */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  
+  .projectDetails {
+    margin-top: 15px; /* Add space between the image and text */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .projectName {
+    font-size: 1.5rem; 
+    font-weight: bold;
+  }
+  
+  .projectDescription {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .learnMore {
+    margin-top: 15px;
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .learnMore:hover {
+    text-decoration: underline; 
+  }
+  
