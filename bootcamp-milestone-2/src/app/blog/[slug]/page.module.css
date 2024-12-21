@@ -28,3 +28,21 @@
     border-radius: 8px;
   }
   
+  .commentsSection {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .commentsTitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .noComments {
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
+  }
+  
