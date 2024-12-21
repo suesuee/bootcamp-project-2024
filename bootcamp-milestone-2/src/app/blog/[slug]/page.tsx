@@ -5,7 +5,7 @@ import Comment from "@/components/Comment";
 async function getSingleBlog(slug: string) {
   try {
     const res = await fetch(`http://localhost:3000/api/Blogs/${slug}`, {
-      cache: "no-store", // Fetch fresh data each time
+      cache: "no-store", 
     });
 
     if (!res.ok) {

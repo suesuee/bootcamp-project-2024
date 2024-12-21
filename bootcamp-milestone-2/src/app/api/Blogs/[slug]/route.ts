@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/database/db";
 import blogSchema from "@/database/blogSchema";
-// import { format } from "date-fns"; // npm install date-fns
 
 type IParams = {
   params: Promise<{

@@ -4,7 +4,7 @@ import connectDB from "@/database/db";
 import ProjectModel from "@/database/projectSchema";
 import ProjectPreview from "@/components/ProjectPreview";
 
-// Function to fetch projects from MongoDB
+// To fetch projects from MongoDB
 async function getProjects() {
   await connectDB(); // Ensure the database is connected
 
@@ -20,7 +20,7 @@ async function getProjects() {
 export default async function PortfolioPage() {
   const projects = await getProjects(); // Fetch projects dynamically
 
-  // Handle the case where no projects are found or an error occurs
+  // When no projects are found or an error occurs
   if (!projects || projects.length === 0) {
     return (
       <main className={styles.portfolioMain}>

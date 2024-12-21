@@ -4,7 +4,7 @@ import connectDB from "@/database/db";
 import Blog from "@/database/blogSchema";
 import BlogPreview from "@/components/BlogPreview";
 
-// Function to fetch blogs from MongoDB
+// To fetch blogs from MongoDB
 async function getBlogs() {
   await connectDB(); // Connect to the database
 
@@ -20,7 +20,7 @@ async function getBlogs() {
 export default async function BlogListPage() {
   const blogs = await getBlogs(); // Fetch blogs dynamically
 
-  // Handle the case where no blogs are found or an error occurs
+  // When no blogs are found or an error occurs
   if (!blogs) {
     return (
       <main className={styles.container}>

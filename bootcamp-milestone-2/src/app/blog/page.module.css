@@ -45,7 +45,7 @@
     width: 100%; /* Make the image width responsive */
     height: auto; /* Maintain the aspect ratio */
     border-radius: 8px;
-    object-fit: cover; /* Ensure the image covers the container */
+    object-fit: cover; /* For the image covers the container */
   }  
   
   .blogDescription {

@@ -13,13 +13,13 @@
     width: 100%; /* Full width of the box */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Fit within the box without distortion */
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px; 
   }
   
   
   .projectDetails {
     margin-top: 15px; /* Add space between the image and text */
-    text-align: left; /* Align text to the left */
+    text-align: left;
   }
   
   .projectName {
