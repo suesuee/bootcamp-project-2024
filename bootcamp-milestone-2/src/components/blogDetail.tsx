@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./blogDetail.module.css";
+import styles from "./BlogDetail.module.css";
 
 type BlogDetailProps = {
   title: string;

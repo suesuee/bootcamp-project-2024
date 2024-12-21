@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./navbar.module.css";
+import style from "./Navbar.module.css";
 import Link from "next/link";
 
 export default function Navbar() {

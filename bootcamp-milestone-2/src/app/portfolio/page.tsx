@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./page.module.css";
 import connectDB from "@/database/db";
 import ProjectModel from "@/database/projectSchema";
-import ProjectPreview from "@/components/projectPreview";
+import ProjectPreview from "@/components/ProjectPreview";
 
 // Function to fetch projects from MongoDB
 async function getProjects() {

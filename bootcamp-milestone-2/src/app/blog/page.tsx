@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./page.module.css";
 import connectDB from "@/database/db";
 import Blog from "@/database/blogSchema";
-import BlogPreview from "@/components/blogPreview"; // Adjust the import path as needed
+import BlogPreview from "@/components/BlogPreview";
 
 // Function to fetch blogs from MongoDB
 async function getBlogs() {

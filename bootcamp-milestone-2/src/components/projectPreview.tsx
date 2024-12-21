@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./projectPreview.module.css";
+import styles from "./ProjectPreview.module.css";
 
 type ProjectProps = {
   name: string;
