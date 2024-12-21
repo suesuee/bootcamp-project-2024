@@ -1,18 +1,20 @@
 import { notFound } from "next/navigation";
-import connectDB from "@/database/db";
-import Blog from "@/database/blogSchema";
 import BlogDetail from "@/components/blogDetail";
 
-// Fetch a single blog by slug
 async function getSingleBlog(slug: string) {
-  await connectDB(); // Ensure database connection
-
   try {
-    const blog = await Blog.findOne({ slug }).orFail(); // Find a single blog by slug
-    return JSON.parse(JSON.stringify(blog)); // Convert Mongoose document to plain object
+    const res = await fetch(`http://localhost:3000/api/Blogs/${slug}`, {
+      cache: "no-store", // Fetch fresh data each time
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch blog with slug: ${slug}`);
+    }
+
+    return res.json(); // Return the blog data as JSON
   } catch (err) {
-    console.error(`Error fetching blog with slug "${slug}":`, err);
-    return null; // Return null if the blog is not found or an error occurs
+    console.error(`Error fetching blog: ${err}`);
+    return null; // Return null if fetching fails
   }
 }
 
