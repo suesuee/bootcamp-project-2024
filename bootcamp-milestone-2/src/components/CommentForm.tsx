@@ -9,15 +9,15 @@ type BlogCommentFormProps = {
 };
 
 export default function BlogCommentForm({ blogSlug, onCommentAdded }: BlogCommentFormProps) {
-  const [user, setUser] = useState(""); // State for the user's name
-  const [comment, setComment] = useState(""); // State for the comment text
-  const [error, setError] = useState<string | null>(null); // State for error messages
-  const [loading, setLoading] = useState(false); // State for loading status
+  const [user, setUser] = useState(""); 
+  const [comment, setComment] = useState(""); 
+  const [error, setError] = useState<string | null>(null); 
+  const [loading, setLoading] = useState(false); 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null); // Clear previous errors
-    setLoading(true); // Set loading state
+    setLoading(true); 
 
     try {
       const res = await fetch(`/api/Blogs/${blogSlug}/comment`, {
@@ -54,7 +54,7 @@ export default function BlogCommentForm({ blogSlug, onCommentAdded }: BlogCommen
           onChange={(e) => setUser(e.target.value)}
           required
           className={styles.input}
-          placeholder="Enter your name"
+          placeholder="Please enter your name"
         />
       </div>
       <div className={styles.formGroup}>
@@ -65,7 +65,7 @@ export default function BlogCommentForm({ blogSlug, onCommentAdded }: BlogCommen
           onChange={(e) => setComment(e.target.value)}
           required
           className={styles.textarea}
-          placeholder="Write your comment"
+          placeholder="Please write your comment"
         ></textarea>
       </div>
       {error && <p className={styles.error}>{error}</p>}

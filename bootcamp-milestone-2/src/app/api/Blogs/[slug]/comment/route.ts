@@ -4,12 +4,12 @@ import Blog from "@/database/blogSchema";
 
 export async function POST(
   req: NextRequest,
-  context: { params: { slug: string } }
+  context: { params: Promise<{ slug: string }> }
 ) {
   await connectDB();
 
   try {
-    const { slug } = context.params; 
+    const { slug } = (await context.params); 
     const body = await req.json();
     const { user, comment } = body;
 

@@ -31,7 +31,7 @@ const blogSchema = new Schema<BlogDocument>({
   imageAlt: { type: String, required: true },
   comments: [
     {
-      users: { type: String, required: true },
+      user: { type: String, required: true },
       comment: { type: String, required: true },
       time: { type: Date, required: true },
     }

@@ -13,6 +13,7 @@ type BlogDetailProps = {
   image: string;
   imageAlt: string;
   comments: { user: string; comment: string; time: Date }[];
+  slug: string; // Add slug to props
 };
 
 export default function BlogDetail({
@@ -22,6 +23,7 @@ export default function BlogDetail({
   image,
   imageAlt,
   comments: initialComments,
+  slug, // Accept slug as a prop
 }: BlogDetailProps) {
   const [comments, setComments] = useState(initialComments);
 
@@ -45,7 +47,7 @@ export default function BlogDetail({
         ) : (
           <p>No comments yet. Be the first to comment!</p>
         )}
-        <CommentForm blogSlug="blog-slug" onCommentAdded={handleNewComment} />
+        <CommentForm blogSlug={slug} onCommentAdded={handleNewComment} />
       </div>
     </div>
   );

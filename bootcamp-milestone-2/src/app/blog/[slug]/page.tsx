@@ -40,6 +40,7 @@ export default async function BlogPage(
         image={blog.image}
         imageAlt={blog.imageAlt}
         comments={blog.comments || []} // Pass the comments array to BlogDetail
+        slug={params.slug} // Pass slug to BlogDetail
       />
     </div>
   );

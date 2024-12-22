@@ -13,7 +13,7 @@ async function getBlogs() {
     return JSON.parse(JSON.stringify(blogs)); // Convert Mongoose documents to plain objects
   } catch (err) {
     console.error("Error fetching blogs:", err);
-    return null; // Return null if an error occurs
+    return null; 
   }
 }
 
