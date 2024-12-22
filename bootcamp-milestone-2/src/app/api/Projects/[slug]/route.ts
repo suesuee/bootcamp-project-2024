@@ -8,6 +8,7 @@ type IParams = {
   }>;
 };
 
+// $ npx @next/codemod@canary next-async-request-api . fixing the await error
 export async function GET(req: NextRequest, props: IParams) {
   const params = await props.params;
   await connectDB();

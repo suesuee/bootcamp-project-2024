@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/database/db";
 import Blog from "@/database/blogSchema";
 
+// $ npx @next/codemod@canary next-async-request-api . fixing the await error
 export async function POST(
   req: NextRequest,
   context: { params: Promise<{ slug: string }> }
@@ -9,7 +10,7 @@ export async function POST(
   await connectDB();
 
   try {
-    const { slug } = (await context.params); 
+    const { slug } = await context.params;
     const body = await req.json();
     const { user, comment } = body;
 
@@ -32,6 +33,9 @@ export async function POST(
     return NextResponse.json({ message: "Comment added successfully" });
   } catch (err) {
     console.error("Error:", err);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
