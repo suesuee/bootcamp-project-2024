@@ -22,7 +22,7 @@
   .input,
   .textarea {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #aec6cf;
     border-radius: 5px;
   }
   
@@ -32,7 +32,7 @@
   }
   
   .submit {
-    background-color: #4CAF50;
+    background-color: #aec6cf;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -41,6 +41,6 @@
   }
   
   .submit:hover {
-    background-color: #45a049;
+    background-color: #499bb7;
   }
   
