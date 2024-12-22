@@ -4,7 +4,7 @@ import ProjectDetail from "@/components/ProjectDetail";
 
 async function getSingleProject(slug: string) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     const res = await fetch(`${baseUrl}/api/Projects/${slug}`, {
       cache: "no-store",
     });
@@ -28,7 +28,7 @@ export default async function ProjectPage(props: {
   const project = await getSingleProject(params.slug); // Fetch the project using slug
 
   if (!project) {
-    notFound(); // Trigger 404 
+    notFound(); // Trigger 404
   }
 
   return (

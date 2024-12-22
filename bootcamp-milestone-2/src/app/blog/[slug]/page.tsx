@@ -3,7 +3,7 @@ import BlogDetail from "../../../components/BlogDetail";
 
 async function getSingleBlog(slug: string) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     const res = await fetch(`${baseUrl}/api/Blogs/${slug}`, {
       cache: "no-store",
     });
@@ -12,24 +12,22 @@ async function getSingleBlog(slug: string) {
       throw new Error(`Failed to fetch blog with slug: ${slug}`);
     }
 
-    return res.json(); 
+    return res.json();
   } catch (err) {
     console.error(`Error fetching blog: ${err}`);
-    return null; 
+    return null;
   }
 }
 
 // Dynamic blog page
-export default async function BlogPage(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export default async function BlogPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const blog = await getSingleBlog(params.slug); // Fetch the blog using slug
 
   if (!blog) {
-    notFound(); 
+    notFound();
   }
 
   return (
