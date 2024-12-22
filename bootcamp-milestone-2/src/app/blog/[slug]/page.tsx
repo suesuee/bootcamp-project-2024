@@ -4,17 +4,17 @@ import BlogDetail from "@/components/BlogDetail";
 async function getSingleBlog(slug: string) {
   try {
     const res = await fetch(`http://localhost:3000/api/Blogs/${slug}`, {
-      cache: "no-store", // Prevent caching for dynamic data
+      cache: "no-store", 
     });
 
     if (!res.ok) {
       throw new Error(`Failed to fetch blog with slug: ${slug}`);
     }
 
-    return res.json(); // Return the blog data as JSON
+    return res.json(); 
   } catch (err) {
     console.error(`Error fetching blog: ${err}`);
-    return null; // Return null if fetching fails
+    return null; 
   }
 }
 
@@ -28,7 +28,7 @@ export default async function BlogPage(
   const blog = await getSingleBlog(params.slug); // Fetch the blog using slug
 
   if (!blog) {
-    notFound(); // Trigger 404 if blog is not found
+    notFound(); 
   }
 
   return (
