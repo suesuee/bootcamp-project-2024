@@ -5,7 +5,7 @@ import styles from "./CommentForm.module.css";
 
 type CommentFormProps = {
   slug: string; // Slug of the blog or project
-  type: "blog" | "project"; // Type of the comment (blog or project)
+  type: "blog" | "project"; // Type of the comment (blog or project)?
   onCommentAdded: (comment: { user: string; comment: string; time: Date }) => void; // Callback to update comments
 };
 
@@ -21,7 +21,7 @@ export default function CommentForm({ slug, type, onCommentAdded }: CommentFormP
     setLoading(true);
 
     try {
-      // Dynamically determine the API endpoint based on the type
+      // Dynamically determine the API endpoint based on the type, blog or project ? 
       const apiPath = type === "blog" ? `/api/Blogs/${slug}/comment` : `/api/Projects/${slug}/comment`;
 
       const res = await fetch(apiPath, {
@@ -58,7 +58,7 @@ export default function CommentForm({ slug, type, onCommentAdded }: CommentFormP
           onChange={(e) => setUser(e.target.value)}
           required
           className={styles.input}
-          placeholder="Please enter your name"
+          placeholder="Enter your name"
         />
       </div>
       <div className={styles.formGroup}>
@@ -69,7 +69,7 @@ export default function CommentForm({ slug, type, onCommentAdded }: CommentFormP
           onChange={(e) => setComment(e.target.value)}
           required
           className={styles.textarea}
-          placeholder="Please write your comment"
+          placeholder="Enter your comment"
         ></textarea>
       </div>
       {error && <p className={styles.error}>{error}</p>}
