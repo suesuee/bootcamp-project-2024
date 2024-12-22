@@ -25,7 +25,7 @@ export default function ProjectPreview({ name, description, image, link, slug }:
           </Link>
         </p>
         <p className={styles.projectDescription}>{description}</p>
-        {/* External link (e.g., GitHub link) */}
+        {/* GitHub link) */}
         <a href={link} target="_blank" rel="noopener noreferrer" className={styles.learnMore}>
           GITHUB LINK
         </a>

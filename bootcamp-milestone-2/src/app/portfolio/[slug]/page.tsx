@@ -27,7 +27,7 @@ export default async function ProjectPage(props: {
   const project = await getSingleProject(params.slug); // Fetch the project using slug
 
   if (!project) {
-    notFound(); // Trigger 404 if project is not found
+    notFound(); // Trigger 404 
   }
 
   return (
