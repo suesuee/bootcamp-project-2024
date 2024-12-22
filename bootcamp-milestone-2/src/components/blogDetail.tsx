@@ -1,5 +1,9 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
+import Comment from "./Comment";
+import CommentForm from "./CommentForm";
 import styles from "./BlogDetail.module.css";
 
 type BlogDetailProps = {
@@ -8,6 +12,7 @@ type BlogDetailProps = {
   description: string;
   image: string;
   imageAlt: string;
+  comments: { user: string; comment: string; time: Date }[];
 };
 
 export default function BlogDetail({
@@ -16,21 +21,32 @@ export default function BlogDetail({
   description,
   image,
   imageAlt,
+  comments: initialComments,
 }: BlogDetailProps) {
+  const [comments, setComments] = useState(initialComments);
+
+  const handleNewComment = (newComment: { user: string; comment: string; time: Date }) => {
+    setComments((prev) => [...prev, newComment]);
+  };
+
   return (
     <div className={styles.container}>
+      {/* Blog Content */}
       <h1 className={styles.title}>{title}</h1>
-      <p className={styles.blogDate}>
-        <strong>Date:</strong> {date}
-      </p>
-      <Image
-        src={image}
-        alt={imageAlt}
-        width={800}
-        height={450}
-        className={styles.image}
-      />
+      <p className={styles.date}>{date}</p>
+      <Image src={image} alt={imageAlt} width={800} height={450} className={styles.image} />
       <p className={styles.description}>{description}</p>
+
+      {/* Comments Section */}
+      <div className={styles.commentsSection}>
+        <h2>Comments</h2>
+        {comments.length > 0 ? (
+          comments.map((comment, index) => <Comment key={index} comment={comment} />)
+        ) : (
+          <p>No comments yet. Be the first to comment!</p>
+        )}
+        <CommentForm blogSlug="blog-slug" onCommentAdded={handleNewComment} />
+      </div>
     </div>
   );
 }

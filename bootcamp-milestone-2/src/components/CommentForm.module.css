@@ -1,0 +1,40 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    max-width: 600px; 
+    margin: 0 auto; /* Center the container */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  .input,
+  .textarea {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  .textarea {
+    min-height: 100px; 
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  

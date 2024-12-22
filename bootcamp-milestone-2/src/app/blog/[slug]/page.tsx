@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation";
 import BlogDetail from "@/components/BlogDetail";
-import Comment from "@/components/Comment";
 
 async function getSingleBlog(slug: string) {
   try {
     const res = await fetch(`http://localhost:3000/api/Blogs/${slug}`, {
-      cache: "no-store", 
+      cache: "no-store", // Prevent caching for dynamic data
     });
 
     if (!res.ok) {
@@ -40,20 +39,8 @@ export default async function BlogPage(
         description={blog.description}
         image={blog.image}
         imageAlt={blog.imageAlt}
+        comments={blog.comments || []} // Pass the comments array to BlogDetail
       />
-      {/* Comments Section */}
-      {blog.comments && blog.comments.length > 0 ? (
-        <div style={{ marginTop: "30px" }}>
-          <h3>Comments</h3>
-          {blog.comments.map((comment: any, index: number) => (
-            <Comment key={index} comment={comment} />
-          ))}
-        </div>
-      ) : (
-        <p style={{ marginTop: "30px", fontStyle: "italic" }}>
-          No comments yet. Be the first to comment!
-        </p>
-      )}
     </div>
   );
 }
