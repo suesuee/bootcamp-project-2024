@@ -20,40 +20,24 @@ async function getSingleProject(slug: string) {
 }
 
 // Dynamic blog page
-export default async function ProjectPage(
-    props: {
-      params: Promise<{ slug: string }>;
-    }
-  ) {
-    const params = await props.params;
-    const project = await getSingleProject(params.slug); // Fetch the project using slug
+export default async function ProjectPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const params = await props.params;
+  const project = await getSingleProject(params.slug); // Fetch the project using slug
 
   if (!project) {
     notFound(); // Trigger 404 if project is not found
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <ProjectDetail
-        name={project.name}
-        slug={project.slug}
-        description={project.description}
-        image={project.image}
-        link={project.link}
-      />
-      {/* Comments Section */}
-      {project.comments && project.comments.length > 0 ? (
-        <div style={{ marginTop: "30px" }}>
-          <h3>Comments</h3>
-          {project.comments.map((comment: any, index: number) => (
-            <Comment key={index} comment={comment} />
-          ))}
-        </div>
-      ) : (
-        <p style={{ marginTop: "30px", fontStyle: "italic" }}>
-          No comments yet. Be the first to comment!
-        </p>
-      )}
-    </div>
+    <ProjectDetail
+      name={project.name}
+      slug={params.slug} // same with blog, need to pass slugs
+      description={project.description}
+      image={project.image}
+      link={project.link}
+      comments={project.comments || []}
+    />
   );
 }

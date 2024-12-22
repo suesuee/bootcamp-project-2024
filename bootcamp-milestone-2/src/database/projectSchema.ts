@@ -31,7 +31,7 @@ const projectSchema = new Schema<ProjectDocument>({
     {
       user: { type: String, required: true },
       comment: { type: String, required: true },
-      time: { type: Date, required: true, default: Date.now },
+      time: { type: Date, required: true},
     },
   ],
 });

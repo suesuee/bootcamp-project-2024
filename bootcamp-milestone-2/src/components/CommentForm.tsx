@@ -3,24 +3,28 @@
 import React, { useState } from "react";
 import styles from "./CommentForm.module.css";
 
-type BlogCommentFormProps = {
-  blogSlug: string; // Slug of the blog to which the comment will be added
+type CommentFormProps = {
+  slug: string; // Slug of the blog or project
+  type: "blog" | "project"; // Type of the comment (blog or project)
   onCommentAdded: (comment: { user: string; comment: string; time: Date }) => void; // Callback to update comments
 };
 
-export default function BlogCommentForm({ blogSlug, onCommentAdded }: BlogCommentFormProps) {
-  const [user, setUser] = useState(""); 
-  const [comment, setComment] = useState(""); 
-  const [error, setError] = useState<string | null>(null); 
-  const [loading, setLoading] = useState(false); 
+export default function CommentForm({ slug, type, onCommentAdded }: CommentFormProps) {
+  const [user, setUser] = useState("");
+  const [comment, setComment] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null); // Clear previous errors
-    setLoading(true); 
+    setError(null);
+    setLoading(true);
 
     try {
-      const res = await fetch(`/api/Blogs/${blogSlug}/comment`, {
+      // Dynamically determine the API endpoint based on the type
+      const apiPath = type === "blog" ? `/api/Blogs/${slug}/comment` : `/api/Projects/${slug}/comment`;
+
+      const res = await fetch(apiPath, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user, comment }),
@@ -31,14 +35,14 @@ export default function BlogCommentForm({ blogSlug, onCommentAdded }: BlogCommen
       }
 
       const newComment = await res.json();
-      onCommentAdded(newComment); // Update parent component with new comment
+      onCommentAdded({ user, comment, time: new Date() }); // Update parent component with new comment
       setUser(""); // Clear input fields
       setComment("");
     } catch (err) {
       console.error("Error submitting comment:", err);
       setError("Error posting comment. Please try again.");
     } finally {
-      setLoading(false); // Reset loading state
+      setLoading(false);
     }
   };
 

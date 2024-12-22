@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/database/db";
-import Blog from "@/database/blogSchema";
+import Portfolio from "@/database/projectSchema";
 
-// $ npx @next/codemod@canary next-async-request-api . fixing the await error
 export async function POST(
   req: NextRequest,
   context: { params: Promise<{ slug: string }> }
@@ -20,13 +19,13 @@ export async function POST(
     }
 
     // Append the comment
-    const updatedBlog = await Blog.findOneAndUpdate(
+    const updatedPortfolio = await Portfolio.findOneAndUpdate(
       { slug },
       { $push: { comments: { user, comment, time: new Date() } } },
-      { new: true } // Return the updated document
+      { new: true }
     );
 
-    if (!updatedBlog) {
+    if (!updatedPortfolio) {
       return NextResponse.json(
         { error: "Portfolio not found" },
         { status: 404 }
