@@ -15,7 +15,8 @@ export default function HomePage() {
         />
         <p className={styles.description}>
           Hello, I'm <strong>Sue</strong>, a Computer Science student at California Polytechnic State University.
-          I am from Myanmar, and I am a third-year transfer student from De Anza College in Cupertino.
+          I am from Myanmar, and I am a third-year transfer student from De Anza College in Cupertino. I always
+          look forward to opportunities to grow and challenge myself! I love doing nothing in my free time :P
         </p>
       </div>
     </div>
