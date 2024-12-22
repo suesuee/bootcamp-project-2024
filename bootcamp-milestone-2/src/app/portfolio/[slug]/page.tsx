@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import ProjectDetail from "@/components/ProjectDetail";
-import Comment from "@/components/Comment";
+//import Comment from "@/components/Comment";
 
 async function getSingleProject(slug: string) {
   try {

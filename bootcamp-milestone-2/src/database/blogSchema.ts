@@ -24,7 +24,7 @@ export interface BlogDocument extends Blog, Document {}
 // Mongoose schema
 const blogSchema = new Schema<BlogDocument>({
   title: { type: String, required: true },
-  slug: { type: String, required: true },
+  slug: { type: String, required: true, unique: true },
   date: { type: Date, required: false, default: new Date() },
   description: { type: String, required: true },
   image: { type: String, required: true },

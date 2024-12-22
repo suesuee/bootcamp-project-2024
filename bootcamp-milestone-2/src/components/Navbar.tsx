@@ -8,7 +8,7 @@ export default function Navbar() {
       <nav className={style.navbar}>
         {/* Logo aligned to the left */}
         <div className={style.logo}>
-          <Link href="/">Sue's Website</Link>
+          <Link href="/">Sue&apos;s Website</Link>
         </div>
 
         {/* Navigation links aligned to the right */}

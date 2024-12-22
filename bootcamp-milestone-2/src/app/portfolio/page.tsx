@@ -4,6 +4,16 @@ import connectDB from "../../database/db";
 import ProjectModel from "../../database/projectSchema";
 import ProjectPreview from "../../components/ProjectPreview";
 
+// Define a TypeScript interface for project data
+interface Project {
+  _id: string;
+  name: string;
+  description: string;
+  image: string;
+  link: string;
+  slug: string;
+}
+
 // To fetch projects from MongoDB
 async function getProjects() {
   await connectDB();
@@ -34,7 +44,7 @@ export default async function PortfolioPage() {
     <main className={styles.portfolioMain}>
       <h1 className={styles.pageTitle}>Portfolio</h1>
       <div className={styles.projectContainer}>
-        {projects.map((project: any) => (
+        {projects.map((project: Project) => (
           <ProjectPreview
             key={project._id}
             name={project.name}

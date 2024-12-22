@@ -34,7 +34,6 @@ export default function CommentForm({ slug, type, onCommentAdded }: CommentFormP
         throw new Error("Failed to post comment");
       }
 
-      const newComment = await res.json();
       onCommentAdded({ user, comment, time: new Date() }); // Update parent component with new comment
       setUser(""); // Clear input fields
       setComment("");

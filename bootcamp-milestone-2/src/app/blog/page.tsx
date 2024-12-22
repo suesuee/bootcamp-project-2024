@@ -4,6 +4,16 @@ import connectDB from "../../database/db";
 import Blog from "../../database/blogSchema";
 import BlogPreview from "../../components/BlogPreview";
 
+// Define a TypeScript interface for the blog data
+interface Blog {
+  title: string;
+  slug: string;
+  date: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+}
+
 // To fetch blogs from MongoDB
 async function getBlogs() {
   await connectDB(); // Connect to the database
@@ -35,7 +45,7 @@ export default async function BlogListPage() {
     <main className={styles.container}>
       <h1 className={styles.title}>Blog Posts</h1>
       <div className={styles.blogList}>
-        {blogs.map((blog: any) => (
+        {blogs.map((blog: Blog) => (
           <BlogPreview
             key={blog.slug}
             title={blog.title}
