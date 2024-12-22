@@ -4,7 +4,8 @@ import ProjectDetail from "@/components/ProjectDetail";
 
 async function getSingleProject(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/Projects/${slug}`, {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const res = await fetch(`${baseUrl}/api/Projects/${slug}`, {
       cache: "no-store",
     });
 

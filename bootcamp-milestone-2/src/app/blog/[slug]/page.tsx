@@ -3,8 +3,9 @@ import BlogDetail from "../../../components/BlogDetail";
 
 async function getSingleBlog(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/Blogs/${slug}`, {
-      cache: "no-store", 
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const res = await fetch(`${baseUrl}/api/Blogs/${slug}`, {
+      cache: "no-store",
     });
 
     if (!res.ok) {
