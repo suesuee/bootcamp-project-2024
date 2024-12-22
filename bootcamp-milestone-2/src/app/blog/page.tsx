@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./page.module.css";
-import connectDB from "@/database/db";
-import Blog from "@/database/blogSchema";
-import BlogPreview from "@/components/BlogPreview";
+import connectDB from "../../database/db";
+import Blog from "../../database/blogSchema";
+import BlogPreview from "../../components/BlogPreview";
 
 // To fetch blogs from MongoDB
 async function getBlogs() {

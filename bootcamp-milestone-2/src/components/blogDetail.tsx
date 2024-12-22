@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Comment from "@/components/Comment";
-import CommentForm from "@/components/CommentForm";
+import Comment from "./Comment";
+import CommentForm from "./CommentForm";
 import styles from "./BlogDetail.module.css";
 
 type BlogDetailProps = {

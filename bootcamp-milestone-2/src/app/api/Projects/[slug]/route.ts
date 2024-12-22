@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "@/database/db";
-import projectSchema from "@/database/projectSchema";
+import connectDB from "../../../../database/db";
+import projectSchema from "../../../../database/projectSchema";
 
 type IParams = {
   params: Promise<{

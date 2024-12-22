@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import BlogDetail from "@/components/BlogDetail";
+import BlogDetail from "../../../components/BlogDetail";
 
 async function getSingleBlog(slug: string) {
   try {

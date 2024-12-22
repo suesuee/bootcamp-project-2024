@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "@/database/db";
+import connectDB from "../../../../../database/db";
 import Portfolio from "@/database/projectSchema";
 
 export async function POST(

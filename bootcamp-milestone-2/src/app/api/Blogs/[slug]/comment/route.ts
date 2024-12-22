@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "@/database/db";
-import Blog from "@/database/blogSchema";
+import connectDB from "../../../../../database/db";
+import Blog from "../../../../../database/blogSchema";
 
 // $ npx @next/codemod@canary next-async-request-api . fixing the await error
 export async function POST(
