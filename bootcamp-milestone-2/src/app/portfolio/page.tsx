@@ -6,7 +6,7 @@ import ProjectPreview from "@/components/ProjectPreview";
 
 // To fetch projects from MongoDB
 async function getProjects() {
-  await connectDB(); // Ensure the database is connected
+  await connectDB();
 
   try {
     const projects = await ProjectModel.find().sort({ name: 1 }).lean(); // Fetch and sort projects alphabetically
@@ -20,7 +20,6 @@ async function getProjects() {
 export default async function PortfolioPage() {
   const projects = await getProjects(); // Fetch projects dynamically
 
-  // When no projects are found or an error occurs
   if (!projects || projects.length === 0) {
     return (
       <main className={styles.portfolioMain}>
@@ -42,6 +41,7 @@ export default async function PortfolioPage() {
             description={project.description}
             image={project.image}
             link={project.link}
+            slug={project.slug}
           />
         ))}
       </div>

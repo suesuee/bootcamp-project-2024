@@ -1,22 +1,43 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Schema, Document, Model } from "mongoose";
 
-// Define the TypeScript type for a Project
-export interface Project extends Document {
+// TypeScript type for a single comment
+export type IComment = {
+  user: string;
+  comment: string;
+  time: Date;
+};
+
+// TypeScript type for Project
+export type Project = {
   name: string;
-  description: string;
-  image: string; // URL of the project image
-  link: string; // Link to the project
-}
+  slug: string;
+  description: string; // Description of the project
+  image: string; // URL for the image
+  link: string; // GH Link to the project
+  comments: IComment[]; // List of comments
+};
 
-// Define the Mongoose schema
-const projectSchema = new Schema<Project>({
+// Mongoose Document type
+export interface ProjectDocument extends Project, Document {}
+
+// Mongoose schema
+const projectSchema = new Schema<ProjectDocument>({
   name: { type: String, required: true },
+  slug: { type: String, required: true, unique: true },
   description: { type: String, required: true },
   image: { type: String, required: true },
   link: { type: String, required: true },
+  comments: [
+    {
+      user: { type: String, required: true },
+      comment: { type: String, required: true },
+      time: { type: Date, required: true, default: Date.now },
+    },
+  ],
 });
 
-// Create the Mongoose model
-const ProjectModel = mongoose.models.Project || mongoose.model<Project>("Project", projectSchema);
+// Collection and model def
+const Project: Model<ProjectDocument> =
+  mongoose.models["projects"] || mongoose.model<ProjectDocument>("projects", projectSchema);
 
-export default ProjectModel;
+export default Project;

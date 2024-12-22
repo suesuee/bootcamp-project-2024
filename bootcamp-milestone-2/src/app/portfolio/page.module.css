@@ -1,21 +1,21 @@
-/* portfolio */
-
 .portfolioMain {
-    padding: 20px;
-    background-color: #ffffff; 
-    text-align: center; 
-  }
-  
-  .pageTitle {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .projectContainer {
-    display: flex;
-    flex-direction: column; /* Stack projects vertically */
-    align-items: center; /* Center-align the project boxes */
-    gap: 15px; /* Add spacing between the boxes */
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.projectContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px;
+}
