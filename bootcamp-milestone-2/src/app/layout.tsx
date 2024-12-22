@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google"; 
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer"; 
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer"; 
 // If you are experiencing an error "localFont is undefined", you might need to add the following blocks of code
 const inter = Inter({ subsets: ["latin"] });
 
