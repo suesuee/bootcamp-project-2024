@@ -19,7 +19,7 @@ export default function HomePage() {
           third-year transfer student from De Anza College in Cupertino.
           I&apos;m always looking forward to opportunities to grow and challenge
           myself! I love swimming, reading books, and playing badminton in my
-          free time
+          free time.
         </p>
       </div>
     </div>
