@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+import Image from "next/image";
+import styles from "./page.module.css";
 
 export default function HomePage() {
   return (
@@ -7,19 +7,21 @@ export default function HomePage() {
       <h1 className={styles.title}>Welcome ~</h1>
       <div className={styles.profileSection}>
         <Image
-          src="/img/profile.jpg" 
+          src="/img/profile.jpg"
           alt="Profile picture"
-          width={150} 
-          height={150} 
+          width={150}
+          height={150}
           className={styles.profileImage}
         />
         <p className={styles.description}>
-          Hello, I&apos;m <strong>Sue</strong>, a Computer Science student at California Polytechnic State University.
-          I am from Myanmar, and I am a third-year transfer student from De Anza College in Cupertino. I&apos;m always
-          looking forward to opportunities to grow and challenge myself! I love doing nothing in my free time :P
+          Hello, I&apos;m <strong>Sue</strong>, a Computer Science student at
+          California Polytechnic State University. I am from Myanmar, and I am a
+          third-year transfer student from De Anza College in Cupertino.
+          I&apos;m always looking forward to opportunities to grow and challenge
+          myself! I love swimming, reading books, and playing badminton in my
+          free time
         </p>
       </div>
     </div>
   );
 }
-
